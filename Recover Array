@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+void function(int a[],int n,int b[])
+{
+	int mid,left,right;
+	int i=0;
+	if(n%2!=0)
+	{
+		mid=n/2;
+		left=mid-1;
+		right=mid+1;
+		b[mid]=a[i];
+		i++;
+	}
+	else
+	{
+		mid=n/2;
+		left=mid-1;
+		right=mid;
+	}
+	
+	while(i<n)
+	{
+		b[left]=a[i];
+		left--;
+		i++;
+		b[right]=a[i];
+		right++;
+		i++;
+	}
+	
+}
+int main()
+{
+	int i[100];
+	int o[100];
+	int n;
+	cin>>n;
+	for(int j=0;j<n;j++)
+	{
+		cin>>i[j];
+	
+	}
+	function( i, n, o);
+	for(int j=0;j<n;j++)
+	{
+		cout<<o[j]<<" ";
+	}
+}
