@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+#include<cstring>
+int main()
+{
+	char input1[100];
+	char input2[100];
+	cin>>input1;
+	cin>>input2;
+	
+		int a=0;
+		int b=0;
+		for(int i=0;i<strlen(input1);i++)
+		{
+			 a=a+input1[i];
+		}
+		for(int i=0;i<strlen(input2);i++)
+		{
+			b=b+input2[i];
+		}
+	if(strlen(input1)==strlen(input2) && a==b)
+	{
+		cout<<"true";
+	}
+	else
+	cout<<"false";
+}
