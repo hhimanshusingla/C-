@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+#include<cstring>
+int main()
+{
+	int c;
+	char input[9];
+	char output[9];
+	cin>>input;
+	output[0]=input[0];
+	int i=1;
+	int j=1;
+	while(i<strlen(input))
+	{
+		int count=1;
+		while(input[i-1]==input[i])
+		{
+			count++;
+			i++;
+		}
+		if(count>1)
+		{
+			
+			output[j]=(char)('0'+count);
+		}
+		else
+		{
+			output[j]=input[i];
+			i++;
+		}
+		j++;
+		
+	}
+	for(int i=0;i<j;i++)
+	{
+		cout<<output[i];
+	}
+}
