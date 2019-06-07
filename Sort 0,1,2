@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int size_first;
+	cin>>size_first;
+	int arr_first[size_first];
+	int count=0;
+	int co=0;
+	int ct=0;
+	for(int i=0;i<size_first;i++)
+	{
+		cin>>arr_first[i];
+	}
+	for(int i=0;i<size_first;i++)
+	{
+		if(arr_first[i]==0)
+		{
+			count++;
+		}
+			else if(arr_first[i]==1)
+		{
+			co++;
+		}
+		else
+		{
+			ct++;
+		}
+	}
+	for(int i=0;i<count;i++)
+	{
+		arr_first[i]=0;
+	}
+	for(int i=count;i<=count+co;i++)
+	{
+		arr_first[i]=1;
+	}
+	for(int i=count+co;i<=count+co+ct;i++)
+	{
+		arr_first[i]=2;
+	}
+	for(int i=0;i<size_first;i++)
+	{
+		cout<<arr_first[i]<<" ";
+	}
+}
