@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+#include<cstring>
+void abc(char a[])
+{
+		int i=0;
+	int j=strlen(a)-1;
+	while(i<j)
+	{
+		char temp=a[i];
+		a[i]=a[j];
+		a[j]=temp;
+		i++;
+		j--;
+	}
+}
+void reverse(char a[],int start,int end)
+{
+	int p=start;
+	int q=end;
+	while(p<q)
+	{
+		char temp=a[p];
+		a[p]=a[q];
+		a[q]=temp;
+		p++;
+		q--;
+	}
+	
+}
+	void reverseStringWordWise(char a[])
+	{
+		abc(a);
+	int start=0,end=0;
+	int j;
+	for( j=0;a[j]!='\0';j++)
+	{
+		if(a[j]==' ')
+		{
+		end=j-1;
+		reverse(a,start,end);
+		start=j+1;
+	}
+}
+	end=j-1;
+	reverse(a,start,end);
+
+}
+
+int main()
+{
+	char a[1000];
+	cin.getline(a,1000);
+
+	
+
+	reverseStringWordWise(a);
+
+	cout<<a;
+}
