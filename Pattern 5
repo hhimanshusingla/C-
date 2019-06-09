@@ -1,0 +1,76 @@
+#include<iostream>
+using namespace std;
+#include "Solution.h"
+
+
+
+void printPattern(int n){
+
+	for(int j=1;j<=n;j++)
+	{
+		int k=n-j+1;
+		int i=0;
+		while((n-i)>k)
+		{
+			cout<<(n-i)<<" ";
+			i++;
+		}
+		int m ;
+		
+for( m=i;m<(2*n-j);m++)
+		{
+			cout<<k<<" ";
+		}
+		for(int p=m;p<=(2*n-2);p++)
+		{
+			if(k==n)
+			{
+			cout<<n<<" ";
+		}
+			else{
+			
+			cout<<k+1<<" ";
+			k++;
+		}
+		}
+cout<<endl;
+}
+for(int j=n+1;j<(2*n);j++)
+{
+	int a=0;
+	for(int i=n;i>(j-n);i--)
+	{
+		cout<<i<<" ";
+		a++;
+	}
+	int o=j-n+1;
+	while(a<=(n+o-2))
+	{
+		cout<<o<<" ";
+		a++;
+	}
+	for(int w=a;w<=(2*n-2);w++)
+	{	if(o==n)
+			{
+			cout<<n<<" ";
+		}
+			else{
+			
+			cout<<o+1<<" ";
+			o++;
+		}
+		
+	}
+	cout<<endl;
+	
+	
+	
+}
+
+}
+int main(){
+  int n;
+  cin >> n;
+  printPattern(n);
+
+}
