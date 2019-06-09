@@ -1,0 +1,49 @@
+ 	#include<unordered_map>
+#include<vector>
+#include<iostream>
+using namespace std;
+#include "solution.h"
+
+int main()
+{
+    int n;
+    int input[100000];
+    cin>>n;
+    for(int i=0; i<n; i++)
+    {
+        cin>>input[i];
+    }
+    int maxKey= highestFrequency(input, n);
+    cout<<maxKey;
+    return 0;
+}
+
+	int highestFrequency(int *input, int n){	 
+     	
+     	vector<int> output;
+     	unordered_map <int,int> seen;
+        for(int i=0;i<n;i++)
+        {
+         int count=0;
+           if(seen.count(input[i])>0)
+           { count++;
+           }
+            else
+            {
+                seen[input[i]]=1;
+                output.push_back(input[i]);
+            }
+            seen[input[i]]++;
+        }
+        int max=seen[output[0]];
+        int k=output[0];
+        for(int j=1;j<output.size();j++)
+        {
+            if(seen[output[j]]>max)
+            {max=seen[output[j]];
+             k=output[j];
+            }
+            
+        }
+        return k;
+ 	}
