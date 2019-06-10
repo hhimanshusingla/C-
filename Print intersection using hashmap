@@ -1,0 +1,93 @@
+#include<unordered_map>
+#include<vector>
+#include <iostream>
+using namespace std;
+
+void intersection(int input1[], int input2[], int size1, int size2) {
+    
+    unordered_map<int,int> o1;
+    unordered_map<int,int> o2;
+    vector<int> p;
+    vector<int> q;
+    for(int i=0;i<size1;i++)
+    {
+        if(o1.count(input1[i])>0)
+        {
+            o1[input1[i]]++;
+        }
+        else
+        {
+            o1[input1[i]]=1;
+        p.push_back(input1[i]);
+        }
+    }
+      for(int i=0;i<size2;i++)
+    {
+        if(o2.count(input2[i])>0)
+        {
+            o2[input2[i]]++;}
+        else
+        {
+            o2[input2[i]]=1;
+          q.push_back(input2[i]);
+        }
+    }
+    for(int i=0;i<p.size();i++)
+    {
+        for(int j=0;j<q.size();j++)
+        {
+            if(p[i]=q[j])
+            {
+                if(o1[p[i]]==o2[q[j]])
+                {
+                    while(o1[p[i]]>0)
+                    {
+                        cout<<p[i]<<endl;
+                        o1[p[i]]--;
+                    }
+                }
+    else if(o1[p[i]]<o2[q[j]])
+                {
+                    while(o1[p[i]]>0)
+                    {
+                        cout<<p[i]<<endl;
+                        o1[p[i]]--;
+                    }
+                }
+            else if(o1[p[i]]>o2[q[j]])
+                {
+                    while(o2[q[j]]>0)
+                    {
+                        cout<<p[i]<<endl;
+                        o2[q[j]]--;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+
+int main() {
+
+	int size1,size2;
+
+	cin>>size1;
+	int *input1=new int[1+size1];	
+	
+	for(int i=0;i<size1;i++)
+		cin>>input1[i];
+
+	cin>>size2;
+	int *input2=new int[1+size2];	
+	
+	for(int i=0;i<size2;i++)
+		cin>>input2[i];
+	
+	
+	intersection(input1,input2,size1,size2);
+
+		
+	return 0;
+}
