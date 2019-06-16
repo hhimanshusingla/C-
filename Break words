@@ -1,0 +1,80 @@
+#include<iostream>
+using namespace std;
+#include<cstring>
+int main()
+{
+	char str[1000];
+	char output[1000];
+	cin.getline(str,1000);
+	int m=0;
+	int k=-1;
+	int w=0;
+	for(int i=0;i<strlen(str);i++)
+	{
+		if(str[i]==' ')
+		{
+	
+		int q=i-w;
+		
+		int p=i;
+		if(q%2==0 && q>=4)
+		{
+		int mid=q/2;
+		for(int j=k+1;j<k+1+mid;j++)
+		{
+		output[m]=str[j];
+		m++;	
+		}
+			output[m]=' ';
+			m++;
+		for(int j=k+1+mid;j<p;j++)
+		{
+			output[m]=str[j];
+			m++;
+		}
+		output[m]=' ';
+		m++;
+		
+		}
+			else{
+		for(int j=w;j<i;j++)
+		{
+			output[m]=str[j];
+			m++;
+		}
+		output[m]=' ';
+		m++;
+	}
+	k=i;
+		w=i+1;
+	}
+
+}
+
+
+	if((strlen(str)-(k+1))%2==0 && (strlen(str)-(k+1))>=4)
+	{int mid=(strlen(str)-(k+1))/2;
+	for(int j=w;j<mid+k+1;j++)
+{
+	output[m]=str[j];
+	m++;
+}
+output[m]=' ';
+m++;
+for(int j=mid+k+1;j<strlen(str);j++)
+{
+	output[m]=str[j];
+	m++;
+}
+		
+	}
+	else{
+		for(int j=w;j<strlen(str);j++)
+		{
+			output[m]=str[j];
+			m++;
+		}
+	}
+
+cout<<output;
+}
