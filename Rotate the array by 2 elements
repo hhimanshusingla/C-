@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+void reverse(int arr[],int si,int ei)
+{
+	while(si<ei)
+	{
+		int temp=arr[si];
+		arr[si]=arr[ei-1];
+		arr[ei-1]=temp;
+		si++;
+		ei--;
+	}
+}
+int main()
+{
+	int n;
+	int d;
+	cin>>n>>d;
+	int arr[n];
+	for(int i=0;i<n;i++)
+	{
+		cin>>arr[i];
+	}
+	reverse(arr,0,d);
+	reverse(arr,d,n);
+	reverse(arr,0,n);
+		for(int i=0;i<n;i++)
+	{
+		cout<<arr[i]<<endl;
+	}
+}
